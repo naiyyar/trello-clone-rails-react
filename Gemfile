@@ -51,3 +51,5 @@ gem "devise", "~> 4.9"
 gem "devise-jwt", "~> 0.12.1"
 
 gem "rack-cors", "~> 2.0"
+
+gem "ranked-model", "~> 0.4.11"
