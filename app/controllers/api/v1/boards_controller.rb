@@ -10,9 +10,7 @@ class Api::V1::BoardsController < ApplicationController
   end
 
   def create
-    board = Board.new(board_params)
-    board.user = current_user
-
+    board = current_user.boards.new(board_params)
     if board.save
       render json: {message: 'Board created successfully', data: board }
     else
