@@ -1,24 +1,38 @@
-# README
+# **Trello Clone** 📝🚀
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A **Trello-like task management application** built with **Ruby on Rails 8** and **ReactJS**.
 
-Things you may want to cover:
+## **📌 Features**
 
-* Ruby version
+✅ **Task Boards** – Create, edit, and manage multiple boards.  
+✅ **Drag & Drop Cards** – Move tasks between lists seamlessly.  
+✅ **User Authentication** – Secure login & signup.  
+✅ **Collaboration** – Invite team members to work on boards.  
+✅ **Fast & Lightweight** – Optimized performance using Rails 8.
 
-* System dependencies
+## **🛠️ Tech Stack**
 
-* Configuration
+-   **Backend**: Ruby 3.2.0 and Rails 8
+-   **Frontend**: ReactJs, Tailwind CSS
+-   **Database**: PostgreSQL
 
-* Database creation
+## **🚀 Installation & Setup**
 
-* Database initialization
+### **1️⃣ Clone the Repository**
 
-* How to run the test suite
+`git clone https://github.com/naiyyar/trello-clone-rails-react.git`
+`cd trello-clone-rails-react` 
 
-* Services (job queues, cache servers, search engines, etc.)
+### **2️⃣ Install Dependencies**
 
-* Deployment instructions
+`bundle install`
 
-* ...
+### **3️⃣ Setup Database**
+
+`rails db:create db:migrate db:seed` 
+
+### **4️⃣ Start the Server**
+
+`./bin/dev` 
+
+Visit **http://localhost:3000/** in your browser. 🎉
