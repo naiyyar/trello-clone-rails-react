@@ -6,7 +6,7 @@ class Api::V1::ListsController < ApplicationController
   end
 
   def show
-    render json: {data: @list }
+    render json: { data: @list, tasks: @list.tasks.rank(:row_order) }
   end
 
   def create
@@ -44,4 +44,5 @@ class Api::V1::ListsController < ApplicationController
   def list_params
     params.require(:list).permit(:name, :board_id, :row_order)
   end
+
 end
