@@ -2,7 +2,7 @@ class Api::V1::ListsController < ApplicationController
   before_action :set_list, only: [:show, :update, :destroy]
 
   def index
-    render json: {data: List.all }
+    render json: { data: current_board.lists.rank(:row_order) }
   end
 
   def show
@@ -10,8 +10,7 @@ class Api::V1::ListsController < ApplicationController
   end
 
   def create
-    list = current_board.lists.new(list_params)
-    list.board = board
+    list = current_board.lists.build(list_params)
 
     if list.save
       render json: {message: 'list created successfully', data: list }
@@ -22,17 +21,17 @@ class Api::V1::ListsController < ApplicationController
 
   def update
     if @list.update(list_params)
-      render json: {message: 'list successfully updated', data: list }
+      render json: {message: 'list successfully updated', data: @list }
     else
-      render json: {message: 'Error in updated list', error: list.errors }
+      render json: {message: 'Error in updated list', error: @list.errors }
     end
   end
 
   def destroy
     if @list.destroy
-      render json: {message: 'list successfully deleted', data: list }
+      render json: {message: 'list successfully deleted', data: @list }
     else
-      render json: {message: 'Error in deleted list', error: list.errors }
+      render json: {message: 'Error in deleted list', error: @list.errors }
     end
   end
 
@@ -43,6 +42,6 @@ class Api::V1::ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:name, :user_id, :background, :row_order)
+    params.require(:list).permit(:name, :board_id, :row_order)
   end
 end
