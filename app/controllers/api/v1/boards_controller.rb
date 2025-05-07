@@ -6,12 +6,14 @@ class Api::V1::BoardsController < ApplicationController
   end
 
   def show
-    render json: {data: @board }
+    switch_board(@board)
+    render json: { data: { board: @board, lists: @board.lists } }
   end
 
   def create
     board = current_user.boards.new(board_params)
     if board.save
+      switch_board(board)
       render json: {message: 'Board created successfully', data: board }
     else
       render json: {message: 'Error in creating board', error: board.errors }
