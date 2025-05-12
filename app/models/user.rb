@@ -7,4 +7,8 @@ class User < ApplicationRecord
 
   has_many :boards, dependent: :destroy
   has_many :board_invitations, dependent: :destroy
+
+  def name
+    email.split('@')[0] rescue 'No-name'
+  end
 end

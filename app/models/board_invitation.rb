@@ -1,5 +1,5 @@
 class BoardInvitation < ApplicationRecord
-  enum :status, {:sent: 0, accepted: 1, rejejected: 2}
+  enum :status, { pending: 0, sent: 1, accepted: 2, rejected: 3 }
   belongs_to :board
   belongs_to :user
 
