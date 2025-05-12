@@ -1,11 +1,12 @@
 class ApplicationController < ActionController::API
   include RackSessionFix
   include ActionController::Helpers
-  before_action :authenticate_user!
 
   before_action :set_current_board, if: :user_signed_in?
 
   helper_method :current_board
+
+  
 
   private
 
