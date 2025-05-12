@@ -17,9 +17,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_12_053309) do
   create_table "board_invitations", force: :cascade do |t|
     t.bigint "board_id", null: false
     t.bigint "user_id", null: false
-    t.string "email"
-    t.string "token"
-    t.integer "status"
+    t.string "email", null: false
+    t.string "token", null: false
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["board_id"], name: "index_board_invitations_on_board_id"
