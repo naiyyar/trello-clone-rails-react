@@ -1,4 +1,5 @@
 class Api::V1::ListsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_list, only: [:show, :update, :destroy]
 
   def index

@@ -1,4 +1,6 @@
 class Api::V1::BoardsController < ApplicationController
+  before_action :authenticate_user!
+
   before_action :set_board, only: [:show, :update, :destroy]
 
   def index

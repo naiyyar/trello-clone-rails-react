@@ -1,5 +1,5 @@
 class Api::V1::BoardInvitationsController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!, only: :create
 
   def create
     @board = Board.find(invitation_params[:board_id])
