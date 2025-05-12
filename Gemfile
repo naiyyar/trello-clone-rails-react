@@ -46,6 +46,8 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 end
 
+gem "letter_opener", group: :development
+
 gem "devise", "~> 4.9"
 
 gem "devise-jwt", "~> 0.12.1"
